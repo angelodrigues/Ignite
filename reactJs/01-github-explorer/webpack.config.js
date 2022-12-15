@@ -20,7 +20,7 @@ module.exports = {
         hot: true,
     },
     plugins: [
-        isDevelopment && new ReactRefreshWebpackPlugin({}),
+        isDevelopment && new ReactRefreshWebpackPlugin(),
 
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'public', 'index.html'),
@@ -35,10 +35,10 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         plugins:[
-
-                        ].
+                            isDevelopment && require.resolve('react-refresh/babel')
+                        ].filter(Boolean),
                     }
-                } ,
+                } 
             },
             {
                 test: /\.scss$/,
