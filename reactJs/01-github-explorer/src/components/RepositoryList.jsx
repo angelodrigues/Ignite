@@ -10,7 +10,7 @@ export function RepositoryList() {
     useEffect(() => {
         fetch('https://api.github.com/users/angelodrigues/repos')
         .then(response => response.json())
-        .then(data => setRepositories(data));
+        .then(data => setRepositories(data.slice(1,6)));
     }, []);
 
 
@@ -21,7 +21,7 @@ export function RepositoryList() {
 
                 <ul>
                     {repositories.map(repository => {
-                        return <RepositoryItem key={repository.name} repository={repository} />
+                        return <RepositoryItem key={repository.name} repository={repository} /> 
                     })}
                 </ul>
             </div>

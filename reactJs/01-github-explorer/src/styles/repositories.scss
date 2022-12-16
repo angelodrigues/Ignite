@@ -46,3 +46,14 @@ ul {
         }
     }
 }
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    
+    bottom {
+        padding: 2px;
+    }
+}
